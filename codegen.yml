@@ -3,6 +3,8 @@ schema:
   - https://graphql.myshopify.com/api/2022-07/graphql.json:
       headers:
         X-Shopify-Storefront-Access-Token: ecdc7f91ed0970e733268535c828fbbe
+documents:
+  - ./graphql/*
 generates:
   ./generated/graphql.ts:
     plugins:

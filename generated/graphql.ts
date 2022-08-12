@@ -6567,7 +6567,19 @@ export enum WeightUnit {
   Pounds = 'POUNDS'
 }
 
+export type GetShopNameQueryVariables = Exact<{ [key: string]: never; }>;
 
+
+export type GetShopNameQuery = { __typename?: 'QueryRoot', shop: { __typename?: 'Shop', name: string } };
+
+
+export const GetShopNameDocument = gql`
+    query GetShopName {
+  shop {
+    name
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -6576,7 +6588,9 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-
+    GetShopName(variables?: GetShopNameQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetShopNameQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetShopNameQuery>(GetShopNameDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetShopName', 'query');
+    }
   };
 }
 export type Sdk = ReturnType<typeof getSdk>;
