@@ -1,0 +1,24 @@
+{
+  "name": "shopgen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen": "graphql-codegen --config codegen.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.11.6",
+    "@graphql-codegen/typescript": "2.7.3",
+    "@graphql-codegen/typescript-resolvers": "2.7.3",
+    "@graphql-codegen/typescript-document-nodes": "2.3.3",
+    "@graphql-codegen/introspection": "2.2.1",
+    "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "graphql": "^16.5.0"
+  }
+}

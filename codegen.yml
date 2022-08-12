@@ -1,0 +1,11 @@
+overwrite: true
+schema: https://shopify.dev/tools/graphiql-storefront-api
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+      - "typescript-document-nodes"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
