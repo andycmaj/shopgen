@@ -4,12 +4,11 @@ schema:
       headers:
         X-Shopify-Storefront-Access-Token: ecdc7f91ed0970e733268535c828fbbe
 generates:
-  src/generated/graphql.ts:
+  ./generated/graphql.ts:
     plugins:
       - typescript
       - typescript-operations
-      # - fragment-matcher
       - typescript-graphql-request
-  ./schema.graphql:
+  ./generated/schema.graphql:
     plugins:
       - schema-ast
