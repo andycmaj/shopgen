@@ -6,7 +6,10 @@ schema:
 generates:
   src/generated/graphql.ts:
     plugins:
-      - "typescript"
+      - typescript
+      - typescript-operations
+      # - fragment-matcher
+      - typescript-graphql-request
   ./schema.graphql:
     plugins:
       - schema-ast
